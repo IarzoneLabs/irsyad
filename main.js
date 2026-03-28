@@ -1,0 +1,217 @@
+const T = {
+  id: {
+    "nav.home": "Beranda",
+    "nav.about": "Tentang",
+    "nav.skills": "Keahlian",
+    "nav.exp": "Pengalaman",
+    "nav.cert": "Sertifikasi",
+    "nav.portfolio": "Portofolio",
+    "nav.contact": "Kontak",
+    "hero.status": "STATUS: OPEN TO WORK · SIDOARJO, EAST JAVA",
+    "hero.sub": "Continuous Improvement · Data Analyst · Manufacturing Ops",
+    "hero.desc": "Profesional Continuous Improvement dengan pengalaman langsung di operasional manufaktur. Spesialisasi optimasi proses berbasis data dan lean methodology. Terbukti menghasilkan efisiensi terukur melalui dashboard interaktif di Kraft Heinz dan analisis 10.000+ rekord data di Narasio Data.",
+    "hero.cv": "⬇ Unduh CV",
+    "hero.contact": "Hubungi Saya",
+    "ey.about": "Gambaran Profil",
+    "about.h": "Tentang Saya",
+    "about.p1": "Saya adalah profesional Continuous Improvement dengan latar belakang Sistem Informasi konsentrasi Data Science & Business Intelligence dari Universitas Negeri Surabaya. Perpaduan antara ilmu informasi dan pengalaman industri manufaktur memberi saya perspektif unik dalam mengoptimalkan proses operasional melalui data.",
+    "about.p2": "Di Kraft Heinz, saya merancang dan mengimplementasikan dashboard interaktif untuk memantau performa 20+ tangki fermentasi secara real-time — meliputi usia tangki, tren TN, pH, NaCl, hingga warna. Saya juga membangun pipeline data dari 3+ sumber untuk mendukung keputusan berbasis data dalam proses panen.",
+    "about.p3": "Saya percaya data yang baik adalah fondasi dari setiap perbaikan proses yang berkelanjutan. Dengan keahlian di Python, SQL, Power BI, dan metodologi Lean, saya siap berkontribusi di lingkungan manufaktur dan industri yang dinamis.",
+    "kpi.1": "Pengalaman Industri",
+    "kpi.2": "Sertifikasi Aktif",
+    "ey.skills": "Kompetensi Utama",
+    "skills.h": "Keahlian & Tools",
+    "sk1.t": "Data & Analytics",
+    "sk2.t": "CI & Manufacturing",
+    "sk3.t": "Spreadsheet & Automation",
+    "sk4.t": "Cloud & Tools",
+    "sk5.t": "Project & Domain",
+    "sk6.t": "Soft Skills",
+    "ey.exp": "Riwayat Kerja",
+    "exp.h": "Riwayat Pengalaman",
+    "e1.role": "Continuous Improvement",
+    "e1.l1": "Merancang dan mengimplementasikan dashboard interaktif untuk memantau performa 20+ tangki fermentasi — metrik: usia tangki, tren TN, pH, NaCl, warna — meningkatkan visibilitas real-time dan mempercepat deteksi anomali.",
+    "e1.l2": "Memproses dan mengintegrasikan data dari 3+ sumber menjadi insight actionable untuk keputusan berbasis data dalam pelacakan TN panen.",
+    "e1.l3": "Mengembangkan rekomendasi berbasis data untuk mengoptimalkan alur penyelesaian defek — mengurangi downtime dan meningkatkan efisiensi produksi.",
+    "e1.l4": "Migrasi konten ke CMS modern, meningkatkan navigasi, responsivitas, dan performa SEO.",
+    "e2.role": "Data Analyst",
+    "e2.l1": "Membangun pemahaman kuat tentang business analytics untuk mengidentifikasi dan memecahkan masalah bisnis.",
+    "e2.l2": "Mengelola, membersihkan, dan memvalidasi data 10.000+ rekord untuk memastikan akurasi dan reliabilitas.",
+    "e2.l3": "Mengorganisasi, querying, dan mengagregasi data untuk mengekstrak insight bermakna yang actionable.",
+    "e2.l4": "Merancang 5+ visualisasi dan dashboard interaktif untuk mengkomunikasikan temuan kepada stakeholder.",
+    "e3.role": "Research & Development",
+    "e3.l1": "Mendesain peralatan ME untuk mendukung proses pengujian produk pertanian.",
+    "e3.l2": "Melakukan analisis kerusakan durabilitas dan pengujian produk Yanmar untuk menilai keandalan dan performa.",
+    "e3.l3": "Berkoordinasi dengan supervisor untuk melaporkan hasil uji dan data spesifikasi produk.",
+    "e3.l4": "Melakukan troubleshooting dasar dan mengidentifikasi potensi masalah teknis saat pengujian.",
+    "ey.proj": "Karya Pilihan",
+    "proj.h": "Proyek Pilihan",
+    "p1.t": "Fermentation Tank Dashboard — Kraft Heinz",
+    "p1.d": "Dashboard interaktif real-time memantau 20+ tangki fermentasi: usia tangki, tren TN, pH, NaCl, warna. Mempercepat deteksi anomali proses secara signifikan.",
+    "p2.t": "Multi-Source Data Pipeline — TN Harvest",
+    "p2.d": "Pipeline integrasi data dari 3+ sumber untuk pelacakan TN panen dan insight actionable operasional berbasis data.",
+    "p3.t": "Defect Resolution Workflow Optimization",
+    "p3.d": "Analisis berbasis data untuk mengoptimalkan alur penyelesaian defek — mengurangi downtime dan meningkatkan efisiensi lini produksi.",
+    "p4.t": "Business Analytics Dashboard — Narasio",
+    "p4.d": "5+ dashboard interaktif dari 10.000+ rekord tervalidasi untuk mengkomunikasikan temuan bisnis kepada stakeholder.",
+    "p5.t": "ME Equipment Design — Yanmar R&D",
+    "p5.d": "Desain peralatan ME dan analisis durabilitas produk Yanmar menggunakan AutoCAD dengan dokumentasi teknis lengkap.",
+    "p6.t": "Energy Data Analytics — Renewable Systems",
+    "p6.d": "Proyek analitik data energi untuk monitoring dan optimasi sistem energi terbarukan (sertifikasi KEMNAKER 2025).",
+    "ey.cert": "Kredensial",
+    "cert.h": "Lisensi & Sertifikasi",
+    "ey.award": "Penghargaan",
+    "award.h": "Penghargaan & Prestasi",
+    "ey.edu": "Latar Akademik",
+    "edu.h": "Pendidikan & Organisasi",
+    "edu.t1": "Pendidikan Formal",
+    "edu.org": "Pengalaman Organisasi",
+    "ey.contact": "Hubungi Saya",
+    "contact.h": "Mari Terhubung",
+    "ct.h3": "Ada peluang di industri manufaktur atau data?",
+    "ct.p": "Saya terbuka untuk peluang kerja, kolaborasi proyek, atau diskusi di bidang Continuous Improvement, Data Analytics, dan Manufacturing Operations. Mari ciptakan dampak nyata bersama.",
+    "f.name": "Nama",
+    "f.email": "Email",
+    "f.subj": "Subjek",
+    "f.msg": "Pesan",
+    "f.note": "* Form simulasi — sambungkan ke Formspree / EmailJS untuk production.",
+    "f.send": "Kirim Pesan →"
+  },
+  en: {
+    "nav.home": "Home",
+    "nav.about": "About",
+    "nav.skills": "Skills",
+    "nav.exp": "Experience",
+    "nav.cert": "Certifications",
+    "nav.portfolio": "Portfolio",
+    "nav.contact": "Contact",
+    "hero.status": "STATUS: OPEN TO WORK · SIDOARJO, EAST JAVA",
+    "hero.sub": "Continuous Improvement · Data Analyst · Manufacturing Ops",
+    "hero.desc": "Continuous Improvement professional with hands-on experience in manufacturing and industrial operations. Specializing in data-driven process optimization and lean methodologies. Proven track record of delivering measurable efficiency gains through interactive dashboards at Kraft Heinz and 10,000+ record data analysis at Narasio Data.",
+    "hero.cv": "⬇ Download CV",
+    "hero.contact": "Contact Me",
+    "ey.about": "Profile Overview",
+    "about.h": "About Me",
+    "about.p1": "I am a Continuous Improvement professional with an Information Systems background, concentrating in Data Science & Business Intelligence at Universitas Negeri Surabaya. This blend of information science and manufacturing industry experience gives me a unique perspective in optimizing operational processes through data.",
+    "about.p2": "At Kraft Heinz, I designed and implemented an interactive dashboard to monitor 20+ fermentation tanks in real-time — covering tank age, TN trends, pH, NaCl, and color. I also built a data pipeline from 3+ sources to support data-driven decision-making during harvest.",
+    "about.p3": "I believe good data is the foundation of every sustainable process improvement. With expertise in Python, SQL, Power BI, and Lean methodology, I'm ready to contribute in dynamic manufacturing and industrial environments.",
+    "kpi.1": "Industry Experience",
+    "kpi.2": "Active Certifications",
+    "ey.skills": "Core Competencies",
+    "skills.h": "Skills & Tools",
+    "sk1.t": "Data & Analytics",
+    "sk2.t": "CI & Manufacturing",
+    "sk3.t": "Spreadsheet & Automation",
+    "sk4.t": "Cloud & Tools",
+    "sk5.t": "Project & Domain",
+    "sk6.t": "Soft Skills",
+    "ey.exp": "Work History",
+    "exp.h": "Work Experience",
+    "e1.role": "Continuous Improvement",
+    "e1.l1": "Designed and implemented an interactive dashboard monitoring 20+ fermentation tanks — metrics: tank age, TN trends, pH, NaCl, color — enhancing real-time visibility and accelerating anomaly detection.",
+    "e1.l2": "Processed and integrated data from 3+ sources into actionable insights supporting data-driven TN tracking during harvest.",
+    "e1.l3": "Developed data-driven recommendations to optimize defect resolution workflows, reducing downtime and improving production efficiency.",
+    "e1.l4": "Migrated content to a modern CMS, improving navigation, responsiveness, and SEO performance.",
+    "e2.role": "Data Analyst",
+    "e2.l1": "Built strong understanding of business analytics to identify and solve business problems.",
+    "e2.l2": "Managed, cleaned, and validated 10,000+ records before analysis to ensure accuracy and reliability.",
+    "e2.l3": "Organized, queried, and aggregated data to extract meaningful actionable insights.",
+    "e2.l4": "Created 5+ compelling visualizations and interactive dashboards to communicate findings to stakeholders.",
+    "e3.role": "Research & Development",
+    "e3.l1": "Designed ME equipment to support agricultural product testing processes.",
+    "e3.l2": "Conducted durability damage analysis and testing on Yanmar products to assess reliability and performance.",
+    "e3.l3": "Coordinated with supervisors to report test results and product specification data.",
+    "e3.l4": "Performed basic troubleshooting and identified potential technical issues during testing.",
+    "ey.proj": "Selected Work",
+    "proj.h": "Selected Projects",
+    "p1.t": "Fermentation Tank Dashboard — Kraft Heinz",
+    "p1.d": "Real-time interactive dashboard monitoring 20+ fermentation tanks: tank age, TN trends, pH, NaCl, color. Significantly accelerated process anomaly detection.",
+    "p2.t": "Multi-Source Data Pipeline — TN Harvest",
+    "p2.d": "Data integration pipeline from 3+ sources for TN harvest tracking and actionable operational insights.",
+    "p3.t": "Defect Resolution Workflow Optimization",
+    "p3.d": "Data-driven analysis to optimize defect resolution workflows — reducing downtime and improving production line efficiency.",
+    "p4.t": "Business Analytics Dashboard — Narasio",
+    "p4.d": "5+ interactive dashboards from 10,000+ validated records to effectively communicate business findings to stakeholders.",
+    "p5.t": "ME Equipment Design — Yanmar R&D",
+    "p5.d": "ME equipment design and Yanmar product durability analysis using AutoCAD with complete technical documentation.",
+    "p6.t": "Energy Data Analytics — Renewable Systems",
+    "p6.d": "Energy data analytics project for monitoring and optimizing renewable energy systems (KEMNAKER certification 2025).",
+    "ey.cert": "Credentials",
+    "cert.h": "Licenses & Certifications",
+    "ey.award": "Recognition",
+    "award.h": "Awards & Achievements",
+    "ey.edu": "Academic Background",
+    "edu.h": "Education & Organizations",
+    "edu.t1": "Formal Education",
+    "edu.org": "Organizational Experience",
+    "ey.contact": "Get In Touch",
+    "contact.h": "Let's Connect",
+    "ct.h3": "Got an opportunity in manufacturing or data?",
+    "ct.p": "I'm open to job opportunities, project collaborations, or discussions in Continuous Improvement, Data Analytics, and Manufacturing Operations. Let's create real impact together.",
+    "f.name": "Name",
+    "f.email": "Email",
+    "f.subj": "Subject",
+    "f.msg": "Message",
+    "f.note": "* Simulated form — connect to Formspree / EmailJS for production.",
+    "f.send": "Send Message →"
+  }
+};
+
+let lang = 'id';
+
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = T[l][el.dataset.i18n];
+    if (v) el.textContent = v;
+  });
+  document.querySelectorAll('.lb').forEach(b => {
+    b.classList.toggle('on', b.textContent === l.toUpperCase());
+  });
+}
+
+function toggleTheme() {
+  const h = document.documentElement, b = document.getElementById('tbtn');
+  const dk = h.dataset.theme === 'dark';
+  h.dataset.theme = dk ? 'light' : 'dark';
+  b.textContent = dk ? '🌙' : '☀️';
+}
+
+const openMenu = () => document.getElementById('mob').classList.add('open');
+const closeMenu = () => document.getElementById('mob').classList.remove('open');
+
+const io = new IntersectionObserver(e => {
+  e.forEach(x => {
+    if (x.isIntersecting) {
+      x.target.classList.add('vis');
+      io.unobserve(x.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.rv,.ei').forEach(el => io.observe(el));
+
+const bio = new IntersectionObserver(e => {
+  e.forEach(x => {
+    if (x.isIntersecting) {
+      x.target.querySelectorAll('.sf').forEach(b => {
+        b.style.width = b.dataset.w + '%';
+      });
+      bio.unobserve(x.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.getElementById('adblock') && bio.observe(document.getElementById('adblock'));
+
+function handleSend(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type=submit]'), msg = document.getElementById('fMsg');
+  btn.textContent = lang === 'id' ? 'Mengirim...' : 'Sending...';
+  btn.disabled = true;
+  setTimeout(() => {
+    msg.className = 'fm ok';
+    msg.textContent = lang === 'id' ? '✓ Pesan terkirim! Irsyad akan segera menghubungi kamu.' : '✓ Message sent! Irsyad will get back to you soon.';
+    e.target.reset();
+    btn.textContent = lang === 'id' ? 'Kirim Pesan →' : 'Send Message →';
+    btn.disabled = false;
+  }, 1400);
+}
