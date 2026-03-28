@@ -11,9 +11,42 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .logo{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:.5rem}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--accent2);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
-.nl{display:flex;gap:2rem;list-style:none}
-.nl a{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text2);text-decoration:none;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nl{display:flex;gap:2rem;list-style:none;align-items:center}
+.nl a{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text2);text-decoration:none;border-bottom:2px solid transparent;transition:color .2s,border-color .2s,background .2s,transform .2s}
 .nl a:hover{color:var(--accent);border-color:var(--accent)}
+
+/* --- KODE BARU UNTUK TOMBOL PORTOFOLIO --- */
+.nl a.nav-highlight {
+  background: var(--accent2);
+  color: #fff !important;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border-bottom: none;
+  animation: pulse-glow 2s infinite;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nl a.nav-highlight:hover {
+  background: var(--accent);
+  color: #fff !important;
+  transform: translateY(-2px);
+  animation: none;
+  border-color: transparent;
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(232, 93, 4, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(232, 93, 4, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 93, 4, 0); }
+}
+
+.mob a.mob-highlight {
+  color: var(--accent2) !important;
+}
+/* ----------------------------------------- */
+
 .nr{display:flex;align-items:center;gap:.75rem}
 .lsw{display:flex;background:var(--bg3);border:1px solid var(--border);border-radius:3px;overflow:hidden}
 .lb{font-family:'Roboto Mono',monospace;font-size:.7rem;font-weight:500;padding:5px 10px;border:none;background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
