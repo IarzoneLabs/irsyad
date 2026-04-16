@@ -96,7 +96,7 @@ const T = {
     "about.p2": "At Kraft Heinz, I designed and implemented an interactive dashboard to monitor 20+ fermentation tanks in real-time — covering tank age, TN trends, pH, NaCl, and color. I also built a data pipeline from 3+ sources to support data-driven decision-making during harvest.",
     "about.p3": "I believe good data is the foundation of every sustainable process improvement. With expertise in Python, SQL, Power BI, and Lean methodology, I'm ready to contribute in dynamic manufacturing and industrial environments.",
     "kpi.1": "Industry Experience",
-    "kpi.2": "Active Certifications",
+    "kpi.2": "Certifications",
     "ey.skills": "Core Competencies",
     "skills.h": "Skills & Tools",
     "sk1.t": "Data & Analytics",
