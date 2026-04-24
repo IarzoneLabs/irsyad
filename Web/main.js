@@ -12,6 +12,8 @@ const T = {
     "hero.desc": "Profesional Continuous Improvement dengan pengalaman langsung di operasional manufaktur. Spesialisasi optimasi proses berbasis data dan lean methodology. Terbukti menghasilkan efisiensi terukur melalui dashboard interaktif di Kraft Heinz dan analisis 10.000+ rekord data di Narasio Data.",
     "hero.cv": "⬇ Unduh CV",
     "hero.contact": "Hubungi Saya",
+    "profile.alt": "Foto Profil Irsyad",
+    "metric.industry": "Industri",
     "ey.about": "Gambaran Profil",
     "about.h": "Tentang Saya",
     "about.p1": "Saya adalah profesional Continuous Improvement dengan latar belakang Sistem Informasi konsentrasi Data Science & Business Intelligence dari Universitas Negeri Surabaya. Perpaduan antara ilmu informasi dan pengalaman industri manufaktur memberi saya perspektif unik dalam mengoptimalkan proses operasional melalui data.",
@@ -29,6 +31,7 @@ const T = {
     "sk6.t": "Soft Skills",
     "ey.exp": "Riwayat Kerja",
     "exp.h": "Riwayat Pengalaman",
+    "e1.period": "Sep 2024<br>– Des 2024",
     "e1.role": "Continuous Improvement",
     "e1.l1": "Merancang dan mengimplementasikan dashboard interaktif untuk memantau performa 20+ tangki fermentasi — metrik: usia tangki, tren TN, pH, NaCl, warna — meningkatkan visibilitas real-time dan mempercepat deteksi anomali.",
     "e1.l2": "Memproses dan mengintegrasikan data dari 3+ sumber menjadi insight actionable untuk keputusan berbasis data dalam pelacakan TN panen.",
@@ -62,10 +65,38 @@ const T = {
     "cert.h": "Lisensi & Sertifikasi",
     "ey.award": "Penghargaan",
     "award.h": "Penghargaan & Prestasi",
+    "cert.issuer1": "KEMNAKER — Kementerian Ketenagakerjaan RI",
+    "cert.title6": "Belajar Dasar Manajemen Proyek",
+    "award.1": "Peserta — Ngobrol Asik Hulu Migas (Peran Gen Z dalam Industri Hulu Migas)",
+    "award.2": "Awardee — Beasiswa Pendidikan Tinggi Non-Akademik",
+    "award.3": "Juara 1 — Cyber Security 'Protect Your Privacy for Millennial'",
+    "award.4": "Runner Up — Kontes Desain AutoCAD (Nasional)",
+    "award.issuer2": "Pemerintah Kabupaten Sidoarjo",
+    "award.issuer3": "Universitas Negeri Surabaya",
+    "award.issuer4": "Universitas Tidar Magelang",
     "ey.edu": "Latar Akademik",
     "edu.h": "Pendidikan & Organisasi",
     "edu.t1": "Pendidikan Formal",
+    "edu.t2": "Pendidikan Vokasi",
+    "edu.degree1": "S1 Sistem Informasi",
+    "edu.degree2": "Desain Rancang Bangun Kapal",
+    "edu.period2": "Agu 2018 – Agu 2021 · Ship Design",
+    "edu.l1": "Class Representative — koordinasi 30+ mahasiswa, penghubung antara mahasiswa, dosen, dan departemen universitas.",
+    "edu.l2": "Konsentrasi Data Science & BI — membangun kemampuan analitik dan pengambilan keputusan berbasis data untuk lingkungan industri.",
+    "edu.l3": "Keahlian teknis desain dan gambar teknik kapal menggunakan AutoCAD.",
+    "edu.l4": "Fondasi kuat dalam pemahaman struktur dan spesifikasi teknis — dasar untuk karir R&D dan engineering.",
     "edu.org": "Pengalaman Organisasi",
+    "org.date1": "Des 2022",
+    "org.date3": "Agu 2022",
+    "org.badge1": "Ketua",
+    "org.badge2": "Logistik",
+    "org.role1": "Ketua — Badan Pengawas Pemilu UNESA",
+    "org.role2": "Koordinator Logistik & Perlengkapan",
+    "org.unit3": "Himpunan Mahasiswa Teknik Informatika — UNESA",
+    "org.l1": "Memimpin pengawasan pemilu seluruh kampus, mengelola pemungutan suara, integritas, dan verifikasi hasil untuk 100+ pemilih mahasiswa.",
+    "org.l2": "Menilai kualifikasi kandidat dan memastikan kepatuhan ketat terhadap pedoman pemilihan dan standar transparansi.",
+    "org.l3": "Mengelola perencanaan logistik end-to-end dan pengadaan dukungan teknis & fasilitas untuk musyawarah mahasiswa skala besar.",
+    "org.l4": "Mengkoordinasikan kegiatan orientasi mahasiswa baru: integrasi akademik, pengenalan kampus, dan inisiatif community-building.",
     "ey.contact": "Hubungi Saya",
     "contact.h": "Mari Terhubung",
     "ct.h3": "Ada peluang di industri manufaktur atau data?",
@@ -75,7 +106,11 @@ const T = {
     "f.subj": "Subjek",
     "f.msg": "Pesan",
     "f.note": "* Form simulasi — sambungkan ke Formspree / EmailJS untuk production.",
-    "f.send": "Kirim Pesan →"
+    "f.send": "Kirim Pesan →",
+    "ph.name": "Nama lengkap",
+    "ph.email": "email@contoh.com",
+    "ph.subj": "Perihal pesan",
+    "ph.msg": "Tulis pesan kamu..."
   },
   en: {
     "nav.home": "Home",
@@ -90,6 +125,8 @@ const T = {
     "hero.desc": "Continuous Improvement professional with hands-on experience in manufacturing and industrial operations. Specializing in data-driven process optimization and lean methodologies. Proven track record of delivering measurable efficiency gains through interactive dashboards at Kraft Heinz and 10,000+ record data analysis at Narasio Data.",
     "hero.cv": "⬇ Download CV",
     "hero.contact": "Contact Me",
+    "profile.alt": "Irsyad profile photo",
+    "metric.industry": "Industries",
     "ey.about": "Profile Overview",
     "about.h": "About Me",
     "about.p1": "I am a Continuous Improvement professional with an Information Systems background, concentrating in Data Science & Business Intelligence at Universitas Negeri Surabaya. This blend of information science and manufacturing industry experience gives me a unique perspective in optimizing operational processes through data.",
@@ -107,6 +144,7 @@ const T = {
     "sk6.t": "Soft Skills",
     "ey.exp": "Work History",
     "exp.h": "Work Experience",
+    "e1.period": "Sep 2024<br>– Dec 2024",
     "e1.role": "Continuous Improvement",
     "e1.l1": "Designed and implemented an interactive dashboard monitoring 20+ fermentation tanks — metrics: tank age, TN trends, pH, NaCl, color — enhancing real-time visibility and accelerating anomaly detection.",
     "e1.l2": "Processed and integrated data from 3+ sources into actionable insights supporting data-driven TN tracking during harvest.",
@@ -140,10 +178,38 @@ const T = {
     "cert.h": "Licenses & Certifications",
     "ey.award": "Recognition",
     "award.h": "Awards & Achievements",
+    "cert.issuer1": "KEMNAKER — Ministry of Manpower of the Republic of Indonesia",
+    "cert.title6": "Project Management Fundamentals",
+    "award.1": "Participant — Ngobrol Asik Hulu Migas (Gen Z's Role in the Upstream Oil and Gas Industry)",
+    "award.2": "Awardee — Non-Academic Higher Education Scholarship",
+    "award.3": "1st Place — Cyber Security 'Protect Your Privacy for Millennial'",
+    "award.4": "Runner Up — National AutoCAD Design Contest",
+    "award.issuer2": "Sidoarjo Regency Government",
+    "award.issuer3": "Universitas Negeri Surabaya",
+    "award.issuer4": "Universitas Tidar Magelang",
     "ey.edu": "Academic Background",
     "edu.h": "Education & Organizations",
     "edu.t1": "Formal Education",
+    "edu.t2": "Vocational Education",
+    "edu.degree1": "Bachelor of Information Systems",
+    "edu.degree2": "Ship Design and Construction",
+    "edu.period2": "Aug 2018 – Aug 2021 · Ship Design",
+    "edu.l1": "Class Representative — coordinated 30+ students and served as a liaison between students, lecturers, and the university department.",
+    "edu.l2": "Data Science & BI concentration — developed analytical and data-driven decision-making capabilities for industrial environments.",
+    "edu.l3": "Technical expertise in ship design and engineering drawings using AutoCAD.",
+    "edu.l4": "Strong foundation in structural understanding and technical specifications — supporting a career path in R&D and engineering.",
     "edu.org": "Organizational Experience",
+    "org.date1": "Dec 2022",
+    "org.date3": "Aug 2022",
+    "org.badge1": "Chair",
+    "org.badge2": "Logistics",
+    "org.role1": "Chair — UNESA Election Supervisory Board",
+    "org.role2": "Logistics & Equipment Coordinator",
+    "org.unit3": "Informatics Engineering Student Association — UNESA",
+    "org.l1": "Led campus-wide election supervision, managing voting, integrity, and result verification for 100+ student voters.",
+    "org.l2": "Assessed candidate qualifications and ensured strict compliance with election guidelines and transparency standards.",
+    "org.l3": "Managed end-to-end logistics planning and procurement of technical support and facilities for a large-scale student deliberation forum.",
+    "org.l4": "Coordinated new student orientation activities, including academic integration, campus introduction, and community-building initiatives.",
     "ey.contact": "Get In Touch",
     "contact.h": "Let's Connect",
     "ct.h3": "Got an opportunity in manufacturing or data?",
@@ -153,7 +219,11 @@ const T = {
     "f.subj": "Subject",
     "f.msg": "Message",
     "f.note": "* Simulated form — connect to Formspree / EmailJS for production.",
-    "f.send": "Send Message →"
+    "f.send": "Send Message →",
+    "ph.name": "Full name",
+    "ph.email": "name@example.com",
+    "ph.subj": "Message subject",
+    "ph.msg": "Write your message..."
   }
 };
 
@@ -161,9 +231,18 @@ let lang = 'id';
 
 function setLang(l) {
   lang = l;
+  document.documentElement.lang = l;
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const v = T[l][el.dataset.i18n];
-    if (v) el.textContent = v;
+    if (v) el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const v = T[l][el.dataset.i18nPlaceholder];
+    if (v) el.placeholder = v;
+  });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const v = T[l][el.dataset.i18nAlt];
+    if (v) el.alt = v;
   });
   document.querySelectorAll('.lb').forEach(b => {
     b.classList.toggle('on', b.textContent === l.toUpperCase());
