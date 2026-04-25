@@ -276,6 +276,7 @@ async function fetchSanityContent(l) {
       cvButton,
       contactButton,
       photoAlt,
+      "photoUrl": photo.asset->url,
       email,
       phone,
       linkedinLabel,
@@ -330,6 +331,7 @@ async function fetchSanityContent(l) {
       cvButton: getSanityValue(result.profile.cvButton, l),
       contactButton: getSanityValue(result.profile.contactButton, l),
       photoAlt: getSanityValue(result.profile.photoAlt, l),
+      photoUrl: result.profile.photoUrl,
       email: result.profile.email,
       phone: result.profile.phone,
       linkedinLabel: result.profile.linkedinLabel,
@@ -471,6 +473,7 @@ function paintProfile(profile) {
 
   const photo = document.getElementById('heroPhoto');
   if (photo && profile.photoAlt) photo.alt = profile.photoAlt;
+  if (photo && profile.photoUrl) photo.src = profile.photoUrl;
 
   const email = document.getElementById('heroEmail');
   if (email && profile.email) {

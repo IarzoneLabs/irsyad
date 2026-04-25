@@ -48,6 +48,14 @@ export const profile = defineType({
       type: 'localizedString',
     }),
     defineField({
+      name: 'photo',
+      title: 'Profile Photo',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'email',
       title: 'Email',
       type: 'string',
