@@ -2,6 +2,12 @@
 
 Sanity Studio ini adalah dashboard admin untuk mengelola konten portfolio.
 
+Dokumentasi lengkap ada di:
+
+```text
+../README.md
+```
+
 ## Cara Setup Pertama Kali
 
 1. Buat akun di Sanity.
