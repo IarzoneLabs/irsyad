@@ -100,6 +100,16 @@ Jika Python tidak tersedia, bisa juga pakai extension Live Server di VS Code.
 
 ## 5. Cara Menjalankan Sanity Studio
 
+cd C:\Users\Asus
+cd irsyad
+cd Web\sanity-studio
+npm install
+npm run dev
+
+
+
+
+
 Masuk ke folder Studio:
 
 ```bash
