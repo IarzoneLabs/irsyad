@@ -229,9 +229,213 @@ const T = {
 
 let lang = 'id';
 
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+function renderTags(tags) {
+  return tags.map(tag => `<span class="tg">${escapeHtml(tag)}</span>`).join('');
+}
+
+function renderBullets(bullets, className = 'ep2') {
+  return `<ul class="${className}">${bullets.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
+}
+
+function hasSanityConfig() {
+  return typeof SANITY_CONFIG !== 'undefined' && Boolean(SANITY_CONFIG.projectId);
+}
+
+function getSanityValue(value, l) {
+  if (!value) return '';
+  if (typeof value === 'string') return value;
+  return value[l] || value.id || value.en || '';
+}
+
+function getFallbackContent(l) {
+  if (!window.PORTFOLIO_CONTENT && typeof PORTFOLIO_CONTENT === 'undefined') return;
+  return PORTFOLIO_CONTENT[l];
+}
+
+async function fetchSanityContent(l) {
+  if (!hasSanityConfig()) return null;
+
+  const cdn = SANITY_CONFIG.useCdn ? 'apicdn' : 'api';
+  const baseUrl = `https://${SANITY_CONFIG.projectId}.${cdn}.sanity.io/v${SANITY_CONFIG.apiVersion}/data/query/${SANITY_CONFIG.dataset}`;
+  const query = `{
+    "projects": *[_type == "project"] | order(order asc, _createdAt asc) {
+      title,
+      description,
+      tags
+    },
+    "certifications": *[_type == "certification"] | order(year desc, _createdAt asc) {
+      year,
+      title,
+      issuer
+    },
+    "awards": *[_type == "award"] | order(year desc, _createdAt asc) {
+      year,
+      icon,
+      title,
+      issuer
+    },
+    "education": *[_type == "education"] | order(order asc, _createdAt asc) {
+      type,
+      degree,
+      school,
+      period,
+      accent,
+      bullets
+    },
+    "organizations": *[_type == "organization"] | order(order asc, _createdAt asc) {
+      date,
+      badge,
+      role,
+      unit,
+      badgeStyle,
+      bullets
+    }
+  }`;
+
+  const response = await fetch(`${baseUrl}?query=${encodeURIComponent(query)}`);
+  if (!response.ok) throw new Error('Sanity request failed');
+
+  const { result } = await response.json();
+  return {
+    projects: result.projects.map(item => ({
+      title: getSanityValue(item.title, l),
+      description: getSanityValue(item.description, l),
+      tags: item.tags || []
+    })),
+    certifications: result.certifications.map(item => ({
+      year: item.year,
+      title: getSanityValue(item.title, l),
+      issuer: getSanityValue(item.issuer, l)
+    })),
+    awards: result.awards.map(item => ({
+      year: item.year,
+      icon: item.icon,
+      title: getSanityValue(item.title, l),
+      issuer: getSanityValue(item.issuer, l)
+    })),
+    education: result.education.map(item => ({
+      type: getSanityValue(item.type, l),
+      degree: getSanityValue(item.degree, l),
+      school: getSanityValue(item.school, l),
+      period: getSanityValue(item.period, l),
+      accent: item.accent,
+      bullets: (item.bullets || []).map(bullet => getSanityValue(bullet, l))
+    })),
+    organizations: result.organizations.map(item => ({
+      date: getSanityValue(item.date, l),
+      badge: getSanityValue(item.badge, l),
+      role: getSanityValue(item.role, l),
+      unit: getSanityValue(item.unit, l),
+      badgeStyle: item.badgeStyle || '',
+      bullets: (item.bullets || []).map(bullet => getSanityValue(bullet, l))
+    }))
+  };
+}
+
+function paintContent(data) {
+  if (!data) return;
+
+  const projectsList = document.getElementById('projectsList');
+  if (projectsList) {
+    projectsList.innerHTML = data.projects.map((project, index) => `
+      <div class="pc rv vis">
+        <div class="pn">${String(index + 1).padStart(2, '0')}</div>
+        <h3>${escapeHtml(project.title)}</h3>
+        <p>${escapeHtml(project.description)}</p>
+        <div class="ptg">${renderTags(project.tags)}</div>
+      </div>
+    `).join('');
+  }
+
+  const certificationsList = document.getElementById('certificationsList');
+  if (certificationsList) {
+    certificationsList.innerHTML = data.certifications.map(cert => `
+      <div class="ci">
+        <div class="cy">${escapeHtml(cert.year)}</div>
+        <div>
+          <div class="cn">${escapeHtml(cert.title)}</div>
+          <div class="ciss">${escapeHtml(cert.issuer)}</div>
+        </div>
+      </div>
+    `).join('');
+    certificationsList.classList.add('vis');
+  }
+
+  const awardsList = document.getElementById('awardsList');
+  if (awardsList) {
+    awardsList.innerHTML = data.awards.map(award => `
+      <div class="ai">
+        <div class="ay">${escapeHtml(award.year)}</div>
+        <div class="aic">${escapeHtml(award.icon)}</div>
+        <div>
+          <div class="at">${escapeHtml(award.title)}</div>
+          <div class="ao">${escapeHtml(award.issuer)}</div>
+        </div>
+      </div>
+    `).join('');
+    awardsList.classList.add('vis');
+  }
+
+  const educationList = document.getElementById('educationList');
+  if (educationList) {
+    educationList.innerHTML = data.education.map(item => {
+      const accentStyle = item.accent ? ' style="border-left-color:var(--accent2)"' : '';
+      const typeStyle = item.accent ? ' style="color:var(--accent2)"' : '';
+      return `
+        <div class="ec2"${accentStyle}>
+          <div class="et"${typeStyle}>${escapeHtml(item.type)}</div>
+          <div class="edeg">${escapeHtml(item.degree)}</div>
+          <div class="esc">${escapeHtml(item.school)}</div>
+          <div class="epr">${escapeHtml(item.period)}</div>
+          ${renderBullets(item.bullets, 'en2')}
+        </div>
+      `;
+    }).join('');
+    educationList.classList.add('vis');
+  }
+
+  const organizationsList = document.getElementById('organizationsList');
+  if (organizationsList) {
+    organizationsList.innerHTML = data.organizations.map(item => `
+      <div class="ei vis" style="opacity:1;transform:none">
+        <div class="ed">
+          <div class="ep">${escapeHtml(item.date)}</div>
+          <div class="eb"${item.badgeStyle ? ` style="${escapeHtml(item.badgeStyle)}"` : ''}>${escapeHtml(item.badge)}</div>
+        </div>
+        <div class="ebo">
+          <div class="er">${escapeHtml(item.role)}</div>
+          <div style="font-size:.85rem;color:var(--text2);margin-bottom:.75rem">${escapeHtml(item.unit)}</div>
+          ${renderBullets(item.bullets)}
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
+async function renderContent(l) {
+  paintContent(getFallbackContent(l));
+
+  try {
+    const sanityContent = await fetchSanityContent(l);
+    if (sanityContent) paintContent(sanityContent);
+  } catch (error) {
+    console.warn('Using local content fallback:', error);
+  }
+}
+
 function setLang(l) {
   lang = l;
   document.documentElement.lang = l;
+  renderContent(l);
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const v = T[l][el.dataset.i18n];
     if (v) el.innerHTML = v;
@@ -294,3 +498,5 @@ function handleSend(e) {
     btn.disabled = false;
   }, 1400);
 }
+
+setLang(lang);
