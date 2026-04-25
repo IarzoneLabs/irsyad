@@ -1,5 +1,24 @@
 const PORTFOLIO_CONTENT = {
   id: {
+    profile: {
+      firstName: "Irsyad Adi",
+      lastName: "Rochman",
+      status: "STATUS: OPEN TO WORK · SIDOARJO, EAST JAVA",
+      subtitle: "Continuous Improvement · Data Analyst · Manufacturing Ops",
+      description: "Profesional Continuous Improvement dengan pengalaman langsung di operasional manufaktur. Spesialisasi optimasi proses berbasis data dan lean methodology. Terbukti menghasilkan efisiensi terukur melalui dashboard interaktif di Kraft Heinz dan analisis 10.000+ rekord data di Narasio Data.",
+      cvButton: "⬇ Unduh CV",
+      contactButton: "Hubungi Saya",
+      photoAlt: "Foto Profil Irsyad",
+      email: "irsyad.adi1222@gmail.com",
+      phone: "082231681309",
+      linkedinLabel: "in irsyadadi",
+      linkedinUrl: "https://linkedin.com/in/irsyadadi",
+      metrics: [
+        { value: "3+", label: "Industri" },
+        { value: "20+", label: "Tank Monitor" },
+        { value: "10K+", label: "Records" }
+      ]
+    },
     projects: [
       {
         title: "Fermentation Tank Dashboard — Kraft Heinz",
@@ -105,6 +124,25 @@ const PORTFOLIO_CONTENT = {
     ]
   },
   en: {
+    profile: {
+      firstName: "Irsyad Adi",
+      lastName: "Rochman",
+      status: "STATUS: OPEN TO WORK · SIDOARJO, EAST JAVA",
+      subtitle: "Continuous Improvement · Data Analyst · Manufacturing Ops",
+      description: "Continuous Improvement professional with hands-on experience in manufacturing and industrial operations. Specializing in data-driven process optimization and lean methodologies. Proven track record of delivering measurable efficiency gains through interactive dashboards at Kraft Heinz and 10,000+ record data analysis at Narasio Data.",
+      cvButton: "⬇ Download CV",
+      contactButton: "Contact Me",
+      photoAlt: "Irsyad profile photo",
+      email: "irsyad.adi1222@gmail.com",
+      phone: "082231681309",
+      linkedinLabel: "in irsyadadi",
+      linkedinUrl: "https://linkedin.com/in/irsyadadi",
+      metrics: [
+        { value: "3+", label: "Industries" },
+        { value: "20+", label: "Tank Monitor" },
+        { value: "10K+", label: "Records" }
+      ]
+    },
     projects: [
       {
         title: "Fermentation Tank Dashboard — Kraft Heinz",

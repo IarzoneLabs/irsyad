@@ -267,6 +267,21 @@ async function fetchSanityContent(l) {
   const cdn = SANITY_CONFIG.useCdn ? 'apicdn' : 'api';
   const baseUrl = `https://${SANITY_CONFIG.projectId}.${cdn}.sanity.io/v${SANITY_CONFIG.apiVersion}/data/query/${SANITY_CONFIG.dataset}`;
   const query = `{
+    "profile": *[_type == "profile"][0] {
+      firstName,
+      lastName,
+      status,
+      subtitle,
+      description,
+      cvButton,
+      contactButton,
+      photoAlt,
+      email,
+      phone,
+      linkedinLabel,
+      linkedinUrl,
+      metrics
+    },
     "projects": *[_type == "project"] | order(order asc, _createdAt asc) {
       title,
       description,
@@ -306,6 +321,24 @@ async function fetchSanityContent(l) {
 
   const { result } = await response.json();
   return {
+    profile: result.profile ? {
+      firstName: result.profile.firstName,
+      lastName: result.profile.lastName,
+      status: getSanityValue(result.profile.status, l),
+      subtitle: getSanityValue(result.profile.subtitle, l),
+      description: getSanityValue(result.profile.description, l),
+      cvButton: getSanityValue(result.profile.cvButton, l),
+      contactButton: getSanityValue(result.profile.contactButton, l),
+      photoAlt: getSanityValue(result.profile.photoAlt, l),
+      email: result.profile.email,
+      phone: result.profile.phone,
+      linkedinLabel: result.profile.linkedinLabel,
+      linkedinUrl: result.profile.linkedinUrl,
+      metrics: (result.profile.metrics || []).map(metric => ({
+        value: metric.value,
+        label: getSanityValue(metric.label, l)
+      }))
+    } : null,
     projects: result.projects.map(item => ({
       title: getSanityValue(item.title, l),
       description: getSanityValue(item.description, l),
@@ -343,6 +376,7 @@ async function fetchSanityContent(l) {
 
 function paintContent(data) {
   if (!data) return;
+  if (data.profile) paintProfile(data.profile);
 
   const projectsList = document.getElementById('projectsList');
   if (projectsList) {
@@ -421,6 +455,52 @@ function paintContent(data) {
   }
 }
 
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el && value) el.textContent = value;
+}
+
+function paintProfile(profile) {
+  setText('heroStatus', profile.status);
+  setText('heroFirstName', profile.firstName);
+  setText('heroLastName', profile.lastName);
+  setText('heroSubtitle', profile.subtitle);
+  setText('heroDescription', profile.description);
+  setText('heroCvButton', profile.cvButton);
+  setText('heroContactButton', profile.contactButton);
+
+  const photo = document.getElementById('heroPhoto');
+  if (photo && profile.photoAlt) photo.alt = profile.photoAlt;
+
+  const email = document.getElementById('heroEmail');
+  if (email && profile.email) {
+    email.href = `mailto:${profile.email}`;
+    email.textContent = `✉ ${profile.email}`;
+  }
+
+  const phone = document.getElementById('heroPhone');
+  if (phone && profile.phone) {
+    phone.href = `tel:${profile.phone}`;
+    phone.textContent = `☎ ${profile.phone}`;
+  }
+
+  const linkedin = document.getElementById('heroLinkedin');
+  if (linkedin && profile.linkedinUrl) {
+    linkedin.href = profile.linkedinUrl;
+    linkedin.textContent = profile.linkedinLabel || profile.linkedinUrl;
+  }
+
+  const metrics = document.getElementById('heroMetrics');
+  if (metrics && profile.metrics?.length) {
+    metrics.innerHTML = profile.metrics.slice(0, 3).map(metric => `
+      <div class="pmi">
+        <div class="pmv">${escapeHtml(metric.value)}</div>
+        <div class="pml">${escapeHtml(metric.label)}</div>
+      </div>
+    `).join('');
+  }
+}
+
 async function renderContent(l) {
   paintContent(getFallbackContent(l));
 
@@ -435,7 +515,6 @@ async function renderContent(l) {
 function setLang(l) {
   lang = l;
   document.documentElement.lang = l;
-  renderContent(l);
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const v = T[l][el.dataset.i18n];
     if (v) el.innerHTML = v;
@@ -451,6 +530,7 @@ function setLang(l) {
   document.querySelectorAll('.lb').forEach(b => {
     b.classList.toggle('on', b.textContent === l.toUpperCase());
   });
+  renderContent(l);
 }
 
 function toggleTheme() {
