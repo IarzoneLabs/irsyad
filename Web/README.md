@@ -104,8 +104,8 @@ Jika Python tidak tersedia, bisa juga pakai extension Live Server di VS Code.
 cd irsyad
 cd Web\sanity-studio
 npm install
-npm run dev```
-
+npm run dev
+```
 
 
 
