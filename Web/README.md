@@ -100,7 +100,7 @@ Jika Python tidak tersedia, bisa juga pakai extension Live Server di VS Code.
 
 ## 5. Cara Menjalankan Sanity Studio
 
-```https://github.com/IarzoneLabs/irsyad.git
+``` https://github.com/IarzoneLabs/irsyad.git
 cd C:\Users\Asus
 cd irsyad
 cd Web\sanity-studio
